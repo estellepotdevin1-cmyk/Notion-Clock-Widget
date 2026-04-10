@@ -1,6 +1,6 @@
 <!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><style>
 body{margin:0;background:#ffe6f2;display:flex;justify-content:center;align-items:center;height:100vh;font-family:sans-serif}
 #c{background:#ffb6c1;color:#fff;font-size:2em;padding:20px 40px;border-radius:15px;box-shadow:0 4px 15px rgba(255,182,193,.6);text-align:center}
-</style></head><body><div id="c">00:00:00</div><script>
-setInterval(()=>{let d=new Date(),h=String(d.getHours()).padStart(2,0),m=String(d.getMinutes()).padStart(2,0),s=String(d.getSeconds()).padStart(2,0);c.textContent=`${h}:${m}:${s}`},1000);
+</style></head><body><div id="c">00:00:00 AM</div><script>
+setInterval(()=>{let d=new Date(),h=d.getHours(),m=String(d.getMinutes()).padStart(2,0),s=String(d.getSeconds()).padStart(2,0),ampm=h>=12?"PM":"AM";h=h%12||12;h=String(h).padStart(2,0);c.textContent=`${h}:${m}:${s} ${ampm}`},1000);
 </script></body></html>
